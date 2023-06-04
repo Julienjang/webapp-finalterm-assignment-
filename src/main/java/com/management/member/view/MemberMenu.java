@@ -51,8 +51,8 @@ public class MemberMenu {
         System.out.println("조회하고 싶은 조건을 선택하세요. ");
         System.out.println("===================================");
         System.out.println("1. 강사명으로 조회");
-        System.out.println("2. 사이트별 강사 조회");
-        System.out.println("3. 이달의 런칭한 강사 조회");
+        System.out.println("2. 인강 사이트별 소속 강사 조회");
+        System.out.println("3. 올해 런칭한 강사 조회");
         System.out.println("4. 강의 중단한 강사 조회");
         System.out.println("===================================");
         System.out.println("원하는 조건의 번호를 입력해 주세요 : ");
@@ -68,7 +68,7 @@ public class MemberMenu {
             case 2 :
                 sc.nextLine();
                 searchOption = "salesStore";
-                System.out.println("판매점 유형을 입력해 주세요(백화점 or 아울렛) : ");
+                System.out.println("사이트 유형을 입력해 주세요(메가스터디 or 대성마이맥) : ");
                 searchValue = sc.nextLine();
                 break;
             case 3 :
@@ -111,22 +111,22 @@ public class MemberMenu {
         System.out.println("수정을 원하지 않는 정보는 SKIP을 입력하세요.");
         System.out.println("===================================");
         System.out.println("수정 대상 강사코드를 입력해 주세요 : ");
-        String productCode = sc.nextLine();
+        String memberCode = sc.nextLine();
 
         MemberDTO memberDTO = new MemberDTO();
-        // 주석을 지우고 받아온 제품 코드를 productDTO 객체에 setting 하세요.
-        memberDTO.setProductCode(productCode);
+        // 주석을 지우고 받아온 제품 코드를 mebmberDTO 객체에 setting 하세요.
+        memberDTO.setMemberCode(Integer.parseInt(memberCode));
 
         getProductInfo(memberDTO);
 
-        System.out.println("강사의 판매량을 입력해 주세요 : ");
-        String salesQuantity  = sc.nextLine();
-        System.out.println("강사의 생산여부를 입력해 주세요(Y:생산중 / H:생산보류 / N:생산중단) : ");
-        String productionStatus = sc.nextLine().toUpperCase();
+        System.out.println("강사의 소속코드를 입력해 주세요 : ");
+        String teamCode  = sc.nextLine();
+        System.out.println("강사의 활동여부를 입력해 주세요(Y:활동중 / H:휴강중 / N:은퇴) : ");
+        String activeStatus = sc.nextLine().toUpperCase();
 
-        // 주석을 지우고 받아온 활동 상태를 productDTO 객체에 setting 하세요.
-        memberDTO.setSalesQuantity(salesQuantity);
-        memberDTO.setProductionStatus(productionStatus);
+        // 주석을 지우고 받아온 활동 상태를 mebmberDTO 객체에 setting 하세요.
+        memberDTO.setTeamCode(Integer.parseInt(teamCode));
+        memberDTO.setActiveStatus(activeStatus);
 
         System.out.println("===================================");
 
@@ -137,25 +137,25 @@ public class MemberMenu {
         Scanner sc = new Scanner(System.in);
 
         System.out.println("강사명을 입력해 주세요 : ");
-        String productName = sc.nextLine();
-        System.out.println("강사의 분류코드를 입력해 주세요 : ");
-        String categoryCode = sc.nextLine();
-        System.out.println("강사의 원가를 입력해 주세요 : ");
-        String originCost = sc.nextLine();
-        System.out.println("강사의 출시일울 입력해 주세요(2000-01-01 형식) : ");
-        String releaseDate = sc.nextLine();
-        System.out.println("강사의 재고량을 입력해 주세요 : ");
-        String stockQuantity  = sc.nextLine();
-        System.out.println("강사의 할인율을 입력해 주세요 : ");
-        String discountRate  = sc.nextLine();
+        String memberName = sc.nextLine();
+        System.out.println("강사의 구분코드를 입력해 주세요 : ");
+        String divisionCode = sc.nextLine();
+        System.out.println("강사의 연락처를 입력해 주세요 : ");
+        String contact = sc.nextLine();
+        System.out.println("강사의 런칭일울 입력해 주세요(2000형식) : ");
+        String launchDate = sc.nextLine();
+        System.out.println("강사의 수강생 수를 입력해 주세요 : ");
+        String studentQuantity  = sc.nextLine();
+        System.out.println("강사의 상세정보를 입력해 주세요 : ");
+        String detailInfo  = sc.nextLine();
 
-        // 주석을 지우고 받아온 정보들을 productDTO 객체에 setting 하세요.
-        memberDTO.setProductName(productName);
-        memberDTO.setCategoryCode(categoryCode);
-        memberDTO.setOriginCost(originCost);
-        memberDTO.setReleaseDate(releaseDate);
-        memberDTO.setStockQuantity(stockQuantity);
-        memberDTO.setDiscountRate(discountRate);
+        // 주석을 지우고 받아온 정보들을 mebmberDTO 객체에 setting 하세요.
+        memberDTO.setMemberName(memberName);
+        memberDTO.setDivisionCode(divisionCode);
+        memberDTO.setContact(contact);
+        memberDTO.setLaunchDate(launchDate);
+        memberDTO.setStudentQuantity(studentQuantity);
+        memberDTO.setDetailInfo(detailInfo);
 
         return memberDTO;
     }

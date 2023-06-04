@@ -6,9 +6,10 @@
     <resultMap id="memberResultMap" type="com.management.member.model.dto.MemberDTO">
         <id property="memberCode" column="MEMBER_CODE"/>
         <result property="memberName" column="MEMBER_NAME"/>
-        <result property="birthDate" column="BIRTH_DATE"/>
+        <result property="launchDate" column="LAUNCH_DATE"/>
         <result property="divisionCode" column="DIVISION_CODE"/>
         <result property="detailInfo" column="DETAIL_INFO"/>
+        <result property="studentQuantity" column="STUDENT_QUANTITY"/>
         <result property="contact" column="CONTACT"/>
         <result property="teamCode" column="TEAM_CODE"/>
         <result property="activeStatus" column="ACTIVE_STATUS"/>
@@ -19,9 +20,10 @@
         SELECT
             MEMBER_CODE,
             MEMBER_NAME,
-            BIRTH_DATE,
+            LAUNCH_DATE,
             DIVISION_CODE,
             DETAIL_INFO,
+            STUDENT_QUANTITY,
             CONTACT,
             TEAM_CODE,
             ACTIVE_STATUS
@@ -34,9 +36,10 @@
         SELECT
         MEMBER_CODE,
         MEMBER_NAME,
-        BIRTH_DATE,
+        LAUNCH_DATE,
         DIVISION_CODE,
         DETAIL_INFO,
+        STUDENT_QUANTITY,
         CONTACT,
         TEAM_CODE,
         ACTIVE_STATUS
@@ -51,8 +54,8 @@
 
     <!-- 회원 정보를 등록하는 쿼리 -->
     <insert id="insertMember" parameterType="com.management.member.model.dto.MemberDTO">
-        INSERT INTO MEMBER_INFO (MEMBER_NAME, BIRTH_DATE, DIVISION_CODE, DETAIL_INFO, CONTACT, TEAM_CODE, ACTIVE_STATUS)
-        VALUES (#{memberName}, #{birthDate}, #{divisionCode}, #{detailInfo}, #{contact}, #{teamCode}, #{activeStatus})
+        INSERT INTO MEMBER_INFO (MEMBER_NAME, LAUNCH_DATE, DIVISION_CODE, DETAIL_INFO, STUDENT_QUANTITY, CONTACT, TEAM_CODE, ACTIVE_STATUS)
+        VALUES (#{memberName}, #{launchDate}, #{divisionCode}, #{detailInfo}, #{studentQuantity}, #{contact}, #{teamCode}, #{activeStatus})
     </insert>
 
     <!-- 회원 정보를 수정하는 쿼리 -->
@@ -62,14 +65,17 @@
             <if test="memberName != null">
                 MEMBER_NAME = #{memberName},
             </if>
-            <if test="birthDate != null">
-                BIRTH_DATE = #{birthDate},
+            <if test="launchDate != null">
+                LAUNCH_DATE = #{launchDate},
             </if>
             <if test="divisionCode != null">
                 DIVISION_CODE = #{divisionCode},
             </if>
             <if test="detailInfo != null">
                 DETAIL_INFO = #{detailInfo},
+            </if>
+            <if test="studentQuantity != null">
+                STUDENT_QUANTITY = #{studentQuantity},
             </if>
             <if test="contact != null">
                 CONTACT = #{contact},

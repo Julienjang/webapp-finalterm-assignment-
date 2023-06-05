@@ -32,7 +32,7 @@
     </select>
 
     <!-- 조건에 따른 회원 목록을 조회하는 쿼리 -->
-    <select id="selectMemberByCondition" resultMap="memberResultMap" parameterType="java.lang.String">
+    <select id="selectMemberByCondition" resultMap="memberResultMap" parameterType="java.util.Map">
         SELECT
         MEMBER_CODE,
         MEMBER_NAME,
@@ -47,10 +47,20 @@
         MEMBER_INFO
         WHERE
         1 = 1
-        <if test="condition != null">
-            AND MEMBER_NAME LIKE CONCAT('%', #{condition}, '%')
+        <if test="condition.memberName != null">
+            AND MEMBER_NAME LIKE CONCAT('%', #{condition.memberName}, '%')
+        </if>
+        <if test="condition.divisionCode != null">
+            AND DIVISION_CODE = #{condition.divisionCode}
+        </if>
+        <if test="condition.launchYear != null">
+            AND YEAR(LAUNCH_DATE) = #{condition.launchYear}
+        </if>
+        <if test="condition.activeStatus != null">
+            AND ACTIVE_STATUS = #{condition.activeStatus}
         </if>
     </select>
+
 
     <!-- 회원 정보를 등록하는 쿼리 -->
     <insert id="insertMember" parameterType="com.management.member.model.dto.MemberDTO">

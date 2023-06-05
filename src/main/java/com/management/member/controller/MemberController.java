@@ -5,6 +5,8 @@ import com.management.member.model.dto.MemberDTO;
 import com.management.member.model.service.MemberService;
 import com.management.member.view.MemberPrint;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import java.util.List;
 
 public class MemberController {
@@ -17,7 +19,7 @@ public class MemberController {
         this.memberPrint = new MemberPrint();
     }
 
-    public void selectAllMembers() {
+    public void selectAllMembers(HttpServletRequest request, HttpServletResponse response) {
         List<MemberDTO> memberList = memberService.selectAllMembers();
 
         if (!memberList.isEmpty()) {
@@ -27,7 +29,7 @@ public class MemberController {
         }
     }
 
-    public void selectMemberByCondition(SearchCondition searchCondition) {
+    public void selectMemberByCondition(HttpServletRequest request, HttpServletResponse response, SearchCondition searchCondition) {
         List<MemberDTO> memberList = memberService.selectMemberByCondition(searchCondition);
 
         if (!memberList.isEmpty()) {
@@ -37,7 +39,7 @@ public class MemberController {
         }
     }
 
-    public void registerNewMember(MemberDTO member) {
+    public void registerNewMember(HttpServletRequest request, HttpServletResponse response, MemberDTO member) {
         boolean result = memberService.registerNewMember(member);
 
         if (result) {
@@ -47,7 +49,7 @@ public class MemberController {
         }
     }
 
-    public void modifyMemberInfo(MemberDTO member) {
+    public void modifyMemberInfo(HttpServletRequest request, HttpServletResponse response, MemberDTO member) {
         boolean result = memberService.modifyMemberInfo(member);
 
         if (result) {
@@ -57,7 +59,7 @@ public class MemberController {
         }
     }
 
-    public void deleteMember(String memberCode) {
+    public void deleteMember(HttpServletRequest request, HttpServletResponse response, String memberCode) {
         boolean result = memberService.deleteMember(memberCode);
 
         if (result) {

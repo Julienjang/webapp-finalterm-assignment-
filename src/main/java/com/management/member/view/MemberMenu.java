@@ -29,11 +29,11 @@ public class MemberMenu {
             int selectMenu = sc.nextInt();
 
             switch (selectMenu) {
-                case 1 : memberController.selectAllMembers(); break;
-                case 2 : memberController.selectMemberByCondition(inputSearchCondition()); break;
-                case 3 : memberController.registerNewMember(inputNewProductInfo()); break;
-                case 4 : memberController.modifyMemberInfo(inputModifyProductInfo()); break;
-                case 5 : memberController.deleteMember(inputProductCode().toString()); break;
+                case 1 : memberController.selectAllMembers(request, response); break;
+                case 2 : memberController.selectMemberByCondition(request, response, inputSearchCondition()); break;
+                case 3 : memberController.registerNewMember(request, response, inputNewProductInfo()); break;
+                case 4 : memberController.modifyMemberInfo(request, response, inputModifyProductInfo()); break;
+                case 5 : memberController.deleteMember(request, response, inputProductCode().toString()); break;
                 case 9 : System.out.println("========상위 메뉴로 이동합니다.========"); return;
                 default : System.out.println("잘못된 번호입니다. 확인 후 다시 입력해 주세요."); break;
             }

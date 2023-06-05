@@ -29,10 +29,10 @@ public class SelectOneMemberServlet extends HttpServlet {
         /* 비지니스 로직 실행 결과에 따라 뷰 연결 */
         String path = "";
         if(selectedMember != null) {
-            path = "/WEB-INF/views/member/showMemberInfo.jsp";
+            path = "views/member/showMemberInfo.jsp";
             request.setAttribute("selectedMember", selectedMember);
         } else {
-            path = "/WEB-INF/views/common/errorPage.jsp";
+            path = "views/common/errorPage.jsp";
             request.setAttribute("message", "멤버 정보 조회 실패!");
         }
 

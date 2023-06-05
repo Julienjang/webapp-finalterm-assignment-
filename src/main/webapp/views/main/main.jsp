@@ -4,7 +4,7 @@
     <title>Title</title>
 </head>
 <body>
-    <jsp:include page="../common/header.jsp"/>
+    <jsp:include page="/views/common/header.jsp"/>
     <h3>EMPLOYEE 테이블에서 EMP_ID를 이용하여 사원 정보 조회해오기</h3>
     <form action="employee/select">
         <label>조회할 사번 : </label>

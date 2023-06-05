@@ -2,21 +2,21 @@
 <!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
 <properties>
     <entry key="selectMemberById">
-        SELECT * FROM Members WHERE MEMBER_CODE = ?
+        SELECT * FROM MEMBER_INFO WHERE MEMBER_CODE = ?
     </entry>
     <entry key="selectAllMembers">
-        SELECT * FROM Members
+        SELECT * FROM MEMBER_INFO
     </entry>
     <entry key="insertMember">
-        INSERT INTO Members (MEMBER_CODE, MEMBER_NAME, LAUNCH_DATE, DIVISION_CODE, DETAIL_INFO, STUDENT_QUANTITY, CONTACT, TEAM_CODE, ACTIVE_STATUS)
-        VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)
+        INSERT INTO Members (MEMBER_NAME, LAUNCH_DATE, DIVISION_CODE, DETAIL_INFO, STUDENT_QUANTITY, CONTACT, TEAM_CODE, ACTIVE_STATUS)
+        VALUES ( ?, ?, ?, ?, ?, ?, ?, ?)
     </entry>
     <entry key="updateMember">
-        UPDATE Members
+        UPDATE MEMBER_INFO
         SET MEMBER_NAME = ?, LAUNCH_DATE = ?, DIVISION_CODE = ?, DETAIL_INFO = ?, STUDENT_QUANTITY = ?, CONTACT = ?, TEAM_CODE = ?, ACTIVE_STATUS = ?
         WHERE MEMBER_CODE = ?
     </entry>
     <entry key="deleteMember">
-        DELETE FROM Members WHERE MEMBER_CODE = ?
+        DELETE FROM MEMBER_INFO WHERE MEMBER_CODE = ?
     </entry>
 </properties>

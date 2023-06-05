@@ -17,7 +17,6 @@ public class InsertMemberServlet extends HttpServlet {
 
         request.setCharacterEncoding("UTF-8");
 
-        int memberCode = Integer.parseInt(request.getParameter("memberCode"));
         String memberName = request.getParameter("memberName");
         String launchDate = request.getParameter("launchDate");
         String divisionCode = request.getParameter("divisionCode");
@@ -30,7 +29,6 @@ public class InsertMemberServlet extends HttpServlet {
         MemberService memberService = new MemberService();
 
         MemberDTO member = new MemberDTO();
-        member.setMemberCode(memberCode);
         member.setMemberName(memberName);
         member.setLaunchDate(launchDate);
         member.setDivisionCode(divisionCode);

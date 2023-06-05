@@ -10,7 +10,7 @@ public class MemberDTO {
     // 구분 코드
     private String divisionCode;
 
-    // 상세 정보
+    // 과목 정보
     private String detailInfo;
     // 수강생 수
     private String studentQuantity;

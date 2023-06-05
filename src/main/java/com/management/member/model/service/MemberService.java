@@ -2,7 +2,7 @@ package com.management.member.model.service;
 
 import com.common.SearchCondition;
 import com.management.member.model.dao.MemberDAO;
-import com.management.member.model.dto.MemberDTO;
+import com.mvc.employee.model.dto.MemberDTO;
 import com.management.member.view.MemberPrint;
 import org.apache.ibatis.session.SqlSession;
 

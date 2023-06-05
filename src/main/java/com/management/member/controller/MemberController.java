@@ -1,7 +1,7 @@
 package com.management.member.controller;
 
 import com.common.SearchCondition;
-import com.management.member.model.dto.MemberDTO;
+import com.mvc.employee.model.dto.MemberDTO;
 import com.management.member.model.service.MemberService;
 import com.management.member.view.MemberPrint;
 

@@ -3,7 +3,7 @@
 <mapper namespace="com.management.member.model.dao.MemberDAO">
 
     <!-- MemberDTO type의 resultMap 설정 -->
-    <resultMap id="memberResultMap" type="com.management.member.model.dto.MemberDTO">
+    <resultMap id="memberResultMap" type="com.mvc.employee.model.dto.MemberDTO">
         <id property="memberCode" column="MEMBER_CODE"/>
         <result property="memberName" column="MEMBER_NAME"/>
         <result property="launchDate" column="LAUNCH_DATE"/>
@@ -63,13 +63,13 @@
 
 
     <!-- 회원 정보를 등록하는 쿼리 -->
-    <insert id="insertMember" parameterType="com.management.member.model.dto.MemberDTO">
+    <insert id="insertMember" parameterType="com.mvc.employee.model.dto.MemberDTO">
         INSERT INTO MEMBER_INFO (MEMBER_NAME, LAUNCH_DATE, DIVISION_CODE, DETAIL_INFO, STUDENT_QUANTITY, CONTACT, TEAM_CODE, ACTIVE_STATUS)
         VALUES (#{memberName}, #{launchDate}, #{divisionCode}, #{detailInfo}, #{studentQuantity}, #{contact}, #{teamCode}, #{activeStatus})
     </insert>
 
     <!-- 회원 정보를 수정하는 쿼리 -->
-    <update id="updateMemberInfo" parameterType="com.management.member.model.dto.MemberDTO">
+    <update id="updateMemberInfo" parameterType="com.mvc.employee.model.dto.MemberDTO">
         UPDATE MEMBER_INFO
         <set>
             <if test="memberName != null">

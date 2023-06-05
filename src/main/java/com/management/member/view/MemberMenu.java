@@ -2,7 +2,7 @@ package com.management.member.view;
 
 import com.common.SearchCondition;
 import com.management.member.controller.MemberController;
-import com.management.member.model.dto.MemberDTO;
+import com.mvc.employee.model.dto.MemberDTO;
 
 import java.util.HashMap;
 import java.util.Map;

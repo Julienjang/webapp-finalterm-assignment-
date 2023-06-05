@@ -1,6 +1,6 @@
 package com.management.member.model.dao;
 
-import com.management.member.model.dto.MemberDTO;
+import com.mvc.employee.model.dto.MemberDTO;
 
 import java.util.List;
 
